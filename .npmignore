@@ -1,0 +1,14 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+.vscode
+*.log
+node_modules
+.nyc_output
+contributing.md
+.travis.yml
+*.test.js
+.github
+.gitignore
+.gitattributes
+.gpmrc
+.all-contributorsrc
