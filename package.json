@@ -5,7 +5,7 @@
   "main": "index.js",
   "typings": "./index.d.ts",
   "scripts": {
-    "test": "ava"
+    "test": "tsc && nyc ava"
   },
   "keywords": [
     "nodejs",
@@ -24,6 +24,8 @@
   "homepage": "https://github.com/axetroy/node-context#readme",
   "devDependencies": {
     "@types/node": "^8.0.47",
-    "ava": "^0.23.0"
+    "ava": "^0.23.0",
+    "coveralls": "^3.0.0",
+    "nyc": "^11.3.0"
   }
 }
