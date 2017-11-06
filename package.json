@@ -5,7 +5,7 @@
   "main": "index.js",
   "typings": "./index.d.ts",
   "scripts": {
-    "test": "tsc && nyc ava"
+    "test": "nyc ava"
   },
   "keywords": [
     "nodejs",
