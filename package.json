@@ -1,7 +1,7 @@
 {
   "name": "@axetroy/context",
   "version": "0.0.1",
-  "description": "",
+  "description": "Create NodeJs context for vm sandbox",
   "main": "index.js",
   "typings": "./index.d.ts",
   "scripts": {
