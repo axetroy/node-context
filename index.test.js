@@ -1,12 +1,12 @@
 import test from 'ava';
 const path = require('path');
 const vm = require('vm');
-const createContext = require('./index');
+const Context = require('./index');
 
 const testFile = './index.js';
 
 test('context', t => {
-  const context = createContext(testFile, { name: 'axetroy', global: {} });
+  const context = new Context(testFile, { name: 'axetroy', global: {} });
   t.deepEqual(context.name, 'axetroy');
   t.deepEqual(context.global.name, 'axetroy');
   t.deepEqual(context.__filename, path.join(__dirname, 'index.js'));
@@ -24,9 +24,7 @@ test('context', t => {
 });
 
 test('vm', t => {
-  const createContext = require('./index');
-
-  const context = createContext(testFile, {
+  const context = new Context(testFile, {
     t,
     pid: process.pid,
     globalBuffer: Buffer
@@ -44,6 +42,23 @@ t.deepEqual(process.pid, pid);
 t.true(typeof module === 'object');
 t.true(typeof exports === 'object');
 t.deepEqual(Buffer, globalBuffer);
+`);
+
+  script.runInNewContext(context);
+  t.pass();
+});
+
+test('global var', t => {
+  const context = new Context(testFile, {
+    t,
+    name: 'axetroy',
+    global: { lover: 'ice snow' }
+  });
+  const script = new vm.Script(`
+t.deepEqual(name, "axetroy");
+t.deepEqual(global.name, "axetroy");
+t.deepEqual(lover, "ice snow");
+t.deepEqual(global.lover, "ice snow");
 `);
 
   script.runInNewContext(context);

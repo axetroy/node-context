@@ -8,7 +8,7 @@ interface ContextOptions$ {
   [key: string]: any;
 }
 
-interface Context {
+interface Context$ {
   __filename: string;
   __dirname: string;
   process: Process;
@@ -23,10 +23,15 @@ interface Context {
   clearInterval: any;
   clearTimeout: any;
   Buffer: Buffer;
-  global: any;
+  global: Context$;
+  add(context: ContextConstructor): void;
 }
 
-declare function createContext(file: string, context?: ContextOptions$): Context;
+interface ContextConstructor {
+  new (filePath: string, context: ContextOptions$): Context$;
+}
 
-export default createContext;
-export { createContext };
+const Context: ContextConstructor;
+
+export default Context;
+export { Context };
