@@ -1,7 +1,10 @@
 ## Create NodeJs context
-
-[![Build Status](https://travis-ci.org/axetroy/node-context.svg?branch=master)](https://travis-ci.org/axetroy/node-context)
+[![Build Status](https://travis-ci.org/axetroy/node-context.js.svg?branch=master)](https://travis-ci.org/axetroy/node-context.js)
+[![Dependency](https://david-dm.org/axetroy/context.js.svg)](https://david-dm.org/axetroy/context.js)
 ![License](https://img.shields.io/badge/license-Apache-green.svg)
+[![Prettier](https://img.shields.io/badge/Code%20Style-Prettier-green.svg)](https://github.com/prettier/prettier)
+![Node](https://img.shields.io/badge/node-%3E=7.6-blue.svg?style=flat-square)
+[![npm version](https://badge.fury.io/js/@axetroy/context.svg)](https://badge.fury.io/js/@axetroy/context)
 
 ## Usage
 
