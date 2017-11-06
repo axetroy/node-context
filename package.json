@@ -1,5 +1,5 @@
 {
-  "name": "node-context",
+  "name": "@axetroy/context",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",

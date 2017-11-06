@@ -1,5 +1,5 @@
 ## Create NodeJs context
-[![Build Status](https://travis-ci.org/axetroy/node-context.js.svg?branch=master)](https://travis-ci.org/axetroy/node-context.js)
+[![Build Status](https://travis-ci.org/axetroy/node-context.svg?branch=master)](https://travis-ci.org/axetroy/node-context)
 [![Dependency](https://david-dm.org/axetroy/context.js.svg)](https://david-dm.org/axetroy/context.js)
 ![License](https://img.shields.io/badge/license-Apache-green.svg)
 [![Prettier](https://img.shields.io/badge/Code%20Style-Prettier-green.svg)](https://github.com/prettier/prettier)
