@@ -18,6 +18,9 @@ test('context', t => {
   t.true(typeof context.clearTimeout === 'function');
   t.true(typeof context.clearInterval === 'function');
   t.true(typeof context.clearImmediate === 'function');
+  t.true(typeof context.require === 'function');
+  t.deepEqual(context.exports, {});
+  t.deepEqual(context.module.exports, context.exports);
   t.deepEqual(process, context.process);
   t.deepEqual(Buffer, context.Buffer);
   t.deepEqual(console, context.console);
@@ -63,6 +66,19 @@ t.deepEqual(global.lover, "ice snow");
 
   script.runInNewContext(context);
   t.pass();
+});
+
+test('invalid file input', t => {
+  t.throws(() => {
+    new Context(null);
+  });
+});
+
+test('instance of Context', t => {
+  const context1 = new Context(testFile);
+  const context2 = Context(testFile);
+  t.true(context1 instanceof Context);
+  t.true(context2 instanceof Context);
 });
 
 test('.add', t => {
