@@ -1,16 +1,28 @@
 ## Create NodeJs context
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/axetroy/node-context.svg)](https://greenkeeper.io/)
-
 [![Build Status](https://travis-ci.org/axetroy/node-context.svg?branch=master)](https://travis-ci.org/axetroy/node-context)
+[![Coverage Status](https://coveralls.io/repos/github/axetroy/node-context/badge.svg?branch=master)](https://coveralls.io/github/axetroy/node-context?branch=master)
+[![Dependency](https://david-dm.org/axetroy/context.js.svg)](https://david-dm.org/axetroy/context.js)
 ![License](https://img.shields.io/badge/license-Apache-green.svg)
+[![Prettier](https://img.shields.io/badge/Code%20Style-Prettier-green.svg)](https://github.com/prettier/prettier)
+![Node](https://img.shields.io/badge/node-%3E=7.6-blue.svg?style=flat-square)
+[![npm version](https://badge.fury.io/js/@axetroy/context.svg)](https://badge.fury.io/js/@axetroy/context)
 
 ## Usage
 
 ```js
-const createContext = require('node-context');
+const vm = require('vm');
+const createContext = require('@axetroy/context');
 
-const context = createContext('./test.file.path');
+const context = createContext('./index.js');
+const script = new vm.Script(`
+const path = require('path');
+console.log('current file is: ', __filename); // current/work/dir/index.js
+console.log('current work dir:: ', process.cwd());  // current/work/dir
+`);
+
+script.runInContext(context);
 ```
 
 ## Contributing

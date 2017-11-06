@@ -1,6 +1,6 @@
 const path = require('path');
 
-function createContext(file) {
+function createContext(file, _context = {}) {
   if (typeof file !== 'string') {
     throw new Error(`file must be a string!`);
   }
@@ -22,8 +22,6 @@ function createContext(file) {
     Buffer
   };
 
-  context.global = context;
-
   if (!path.isAbsolute(file)) {
     file = path.join(process.cwd(), file);
   }
@@ -31,6 +29,8 @@ function createContext(file) {
   context.__filename = file;
   context.__dirname = path.dirname(file);
 
+  Object.assign(context, _context);
+  context.global = context;
   return context;
 }
 

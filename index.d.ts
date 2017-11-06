@@ -1,8 +1,12 @@
 /// <reference types="node" />
 
-import {Buffer} from 'buffer';
-import {Process} from 'process';
+import { Buffer } from 'buffer';
+import { Process } from 'process';
 import Console from 'console';
+
+interface ContextOptions$ {
+  [key: string]: any;
+}
 
 interface Context {
   __filename: string;
@@ -22,7 +26,7 @@ interface Context {
   global: any;
 }
 
-declare function createContext(file: string): Context;
+declare function createContext(file: string, context?: ContextOptions$): Context;
 
 export default createContext;
 export { createContext };
