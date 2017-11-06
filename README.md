@@ -10,9 +10,17 @@
 ## Usage
 
 ```js
-const createContext = require('node-context');
+const vm = require('vm');
+const createContext = require('@axetroy/context');
 
-const context = createContext('./test.file.path');
+const context = createContext('./index.js');
+const script = new vm.Script(`
+const path = require('path');
+console.log('current file is: ', __filename); // current/work/dir/index.js
+console.log('current work dir:: ', process.cwd());  // current/work/dir
+`);
+
+script.runInContext(context);
 ```
 
 ## Contributing
