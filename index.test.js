@@ -64,3 +64,21 @@ t.deepEqual(global.lover, "ice snow");
   script.runInNewContext(context);
   t.pass();
 });
+
+test('.add', t => {
+  const context = new Context(testFile, {
+    t,
+    name: 'axetroy'
+  });
+  const script = new vm.Script(`
+t.deepEqual(name, "axetroy");
+`);
+
+  script.runInNewContext(context);
+
+  t.deepEqual(context.lover, void 0);
+
+  context.add({ lover: 'ice snow' });
+
+  t.deepEqual(context.lover, 'ice snow');
+});
