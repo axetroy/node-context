@@ -22,7 +22,7 @@ console.log('current file is: ', __filename); // current/work/dir/index.js
 console.log('current work dir:: ', process.cwd());  // current/work/dir
 `);
 
-script.runInContext(context);
+script.runInNewContext(context);
 ```
 
 ## Contributing
