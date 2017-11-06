@@ -1,4 +1,6 @@
 ## Create NodeJs context
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/axetroy/node-context.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/axetroy/node-context.svg?branch=master)](https://travis-ci.org/axetroy/node-context)
 [![Coverage Status](https://coveralls.io/repos/github/axetroy/node-context/badge.svg?branch=master)](https://coveralls.io/github/axetroy/node-context?branch=master)
 [![Dependency](https://david-dm.org/axetroy/node-context.svg)](https://david-dm.org/axetroy/node-context)
