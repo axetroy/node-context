@@ -13,9 +13,9 @@
 
 ```js
 const vm = require('vm');
-const createContext = require('@axetroy/context');
+const Context = require('@axetroy/context');
 
-const context = createContext('./index.js');
+const context = new Context('./index.js');
 const script = new vm.Script(`
 const path = require('path');
 console.log('current file is: ', __filename); // current/work/dir/index.js
