@@ -38,10 +38,11 @@ Context.prototype.add = function(context) {
     if (context.hasOwnProperty(attr)) {
       const value = context[attr];
       if (attr === 'global') {
-        if (typeof value === 'object') {
+        if (typeof value === 'object' && value !== null) {
           this.add(value);
         } else {
           // skip
+          throw new Error(`global property in context must be a object!`);
         }
       } else {
         this[attr] = value;

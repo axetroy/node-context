@@ -85,6 +85,13 @@ test('instance of Context', t => {
   t.true(context2 instanceof Context);
 });
 
+test('absolute input file', t => {
+  const inputFile = path.join(process.cwd(), testFile);
+  const context = new Context(inputFile);
+  t.deepEqual(context.__filename, inputFile);
+  t.deepEqual(context.__dirname, path.dirname(inputFile));
+});
+
 test('.add', t => {
   const context = new Context(testFile, {
     t,
@@ -104,5 +111,11 @@ t.deepEqual(name, "axetroy");
 
   t.throws(() => {
     context.add(null);
+  });
+
+  t.throws(() => {
+    context.add({
+      global: 123 // can not recover the global property
+    });
   });
 });

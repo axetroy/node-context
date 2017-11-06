@@ -7,7 +7,7 @@
 ![License](https://img.shields.io/badge/license-Apache-green.svg)
 [![Prettier](https://img.shields.io/badge/Code%20Style-Prettier-green.svg)](https://github.com/prettier/prettier)
 ![Node](https://img.shields.io/badge/node-%3E=7.6-blue.svg?style=flat-square)
-[![npm version](https://badge.fury.io/js/@axetroy/context.svg)](https://badge.fury.io/js/@axetroy/context)
+[![npm version](https://badge.fury.io/js/%40axetroy%2Fcontext.svg)](https://badge.fury.io/js/%40axetroy%2Fcontext)
 
 ## Usage
 
