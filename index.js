@@ -30,14 +30,21 @@ function Context(file, context = {}) {
 }
 
 Context.prototype.add = function(context) {
+  const type = typeof context;
+  if (type !== 'object' || context === null) {
+    throw new Error(`Context must be a plain object!`);
+  }
   for (let attr in context) {
     if (context.hasOwnProperty(attr)) {
+      const value = context[attr];
       if (attr === 'global') {
-        if (typeof context[attr] === 'object') {
-          this.add(context[attr]);
+        if (typeof value === 'object') {
+          this.add(value);
+        } else {
+          // skip
         }
       } else {
-        this[attr] = context[attr];
+        this[attr] = value;
       }
     }
   }

@@ -64,6 +64,10 @@ t.deepEqual(lover, "ice snow");
 t.deepEqual(global.lover, "ice snow");
 `);
 
+  t.deepEqual(context.global, context);
+  t.deepEqual(context.global.name, 'axetroy');
+  t.deepEqual(context.global.lover, 'ice snow');
+
   script.runInNewContext(context);
   t.pass();
 });
@@ -97,4 +101,8 @@ t.deepEqual(name, "axetroy");
   context.add({ lover: 'ice snow' });
 
   t.deepEqual(context.lover, 'ice snow');
+
+  t.throws(() => {
+    context.add(null);
+  });
 });
