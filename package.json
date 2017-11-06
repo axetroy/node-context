@@ -5,7 +5,7 @@
   "main": "index.js",
   "typings": "./index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava"
   },
   "keywords": [
     "nodejs",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/axetroy/node-context#readme",
   "devDependencies": {
-    "@types/node": "^8.0.47"
+    "@types/node": "^8.0.47",
+    "ava": "^0.23.0"
   }
 }
