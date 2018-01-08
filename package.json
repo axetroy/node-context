@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/axetroy/node-context#readme",
   "devDependencies": {
-    "@types/node": "^8.0.47",
+    "@types/node": "^9.3.0",
     "ava": "^0.24.0",
     "coveralls": "^3.0.0",
     "nyc": "^11.3.0"
